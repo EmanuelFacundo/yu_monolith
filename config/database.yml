@@ -4,6 +4,7 @@ default: &default
   username: yu_monolith
   password: pass_yu_monolith
   host: localhost
+  asd
   port: 5433
 
 development:
