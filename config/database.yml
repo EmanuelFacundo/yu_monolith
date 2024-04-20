@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: yu_monolith
+  password: pass_yu_monolith
+  host: localhost
+  port: 5433
+
+development:
+  <<: *default
+  database: yu_monolith_development'
+
+test:
+  <<: *default
+  database: yu_monolith_test
