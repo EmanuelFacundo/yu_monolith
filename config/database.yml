@@ -3,7 +3,7 @@ default: &default
   encoding: unicode
   username: yu_monolith
   password: pass_yu_monolith
-  host: test
+  host: localhost
   port: 5433
 
 development:
