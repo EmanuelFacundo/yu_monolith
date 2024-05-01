@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Userable
+module Userable
   extend ActiveSupport::Concern
 
   included do
