@@ -23,7 +23,7 @@ module YuMonolith
     #
     # Brasilia is the default time zone for this application.
     config.time_zone = "Brasilia"
-    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
+    # The default locale is :"pt-BR" and all translations from config/locales/*.rb,yml are auto loaded.
     config.i18n.default_locale = :"pt-BR"
     config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}")]
     # config.eager_load_paths << Rails.root.join("extras")
