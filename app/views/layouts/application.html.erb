@@ -11,8 +11,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="bg-slate-100 dark:bg-slate-800 text-gray-900 dark:text-gray-50">
+    <main class="m-auto">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
       <%= yield %>
     </main>
   </body>
