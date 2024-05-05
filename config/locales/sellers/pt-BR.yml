@@ -1,0 +1,82 @@
+pt-BR:
+  activerecord:
+    models:
+      seller: "Vendedor"
+    attributes:
+      seller:
+        first_name: "Primeiro Nome"
+        last_name: "Último Nome"
+        email: "Email"
+        password: "Senha"
+        password_confirmation: "Confirmação de Senha"
+        current_password: "Senha Atual"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+    errors:
+      models:
+        seller:
+          attributes:
+            password:
+              confirmation: "não confere com a senha"
+              empty: "não pode ficar em branco"
+              invalid: "é inválida"
+              too_short: "é muito curta (mínimo de %{count} caracteres)"
+              too_long: "é muito longa (máximo de %{count} caracteres)"
+              blank: "não pode ficar em branco"
+            email:
+              blank: "não pode ficar em branco"
+              invalid: "não é válido"
+              taken: "já está em uso"
+
+  sellers:
+    registrations:
+      signed_up: "Bem-vindo, %{full_name}! Você se cadastrou com sucesso."
+      signed_up_but_unconfirmed: "Um email foi enviado para sua caixa de entrada com um link de confirmação. Por favor, clique no link para ativar sua conta."
+      signed_up_but_inactive: "Você se cadastrou com sucesso. No entanto, não podemos realizar o seu login porque sua conta ainda não foi ativada."
+      signed_up_but_locked: "Você se cadastrou com sucesso. No entanto, não podemos realizar o seu login você porque sua conta está bloqueada."
+      updated: "Sua conta foi atualizada com sucesso."
+      update_needs_confirmation: "Você atualizou sua conta com sucesso, mas precisamos verificar seu novo endereço de email. Por favor, verifique seu email e siga o link de confirmação para confirmar seu novo endereço de email."
+      destroyed: "Tchau! Sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve."
+      signed_up_failed: "Houve um problema ao criar sua conta. Por favor, tente novamente."
+    sessions:
+      signed_in: "Login efetuado com sucesso. Seja bem-vindo de volta!"
+      signed_out: "Logout efetuado com sucesso. Até logo!"
+      already_signed_out: "Você não está logado."
+    passwords:
+      send_instructions: "Você receberá um email com instruções sobre como redefinir sua senha em alguns minutos."
+      send_paranoid_instructions: "Se seu endereço de email existir em nosso banco de dados, você receberá um link para redefinir sua senha em alguns minutos."
+      updated: "Sua senha foi alterada com sucesso. Você está realizamos o seu login automaticamente."
+      updated_not_active: "Sua senha foi alterada com sucesso."
+      no_token: "Você não pode acessar esta página sem vir de um email de redefinição de senha. Se você veio de um email de redefinição de senha, certifique-se de usar a URL completa fornecida."
+    confirmations:
+      confirmed: "Seu endereço de email foi confirmado com sucesso."
+      send_instructions: "Você receberá um email com instruções sobre como confirmar seu endereço de email em alguns minutos."
+      send_paranoid_instructions: "Se seu endereço de email existir em nosso banco de dados, você receberá um email com instruções sobre como confirmar seu endereço de email em alguns minutos."
+    unlocks:
+      send_instructions: "Você receberá um email com instruções sobre como desbloquear sua conta em alguns minutos."
+      send_paranoid_instructions: "Se sua conta existir, você receberá um email com instruções sobre como desbloqueá-la em alguns minutos."
+      unlocked: "Sua conta foi desbloqueada com sucesso. Por favor, faça login para continuar."
+    failure:
+      unauthenticated: "Você precisa fazer login ou se cadastrar antes de continuar."
+      unconfirmed: "Você precisa confirmar seu endereço de email antes de continuar."
+      locked: "Sua conta está bloqueada."
+      invalid: "Email ou senha inválidos."
+      invalid_token: "Token inválido."
+      timeout: "Sua sessão expirou. Por favor, faça login novamente para continuar."
+      inactive: "Sua conta ainda não foi ativada."
+      already_authenticated: "Você já realizou o login."
+      last_attempt: "Você tem mais uma tentativa antes de sua conta ser bloqueada."
+      not_found_in_database: "Email ou senha inválidos."
+  errors:
+    messages:
+      already_confirmed: "já foi confirmado, por favor, tente fazer login."
+      confirmation_period_expired: "precisa ser confirmado dentro de %{period}, por favor, solicite um novo."
+      expired: "expirou, por favor, solicite um novo."
+      not_found: "não encontrado."
+      not_locked: "não está bloqueado."
+      not_saved:
+        one: "Não foi possível salvar por um erro."
+        other: "Não foi possível salvar por um ou mais erros."
+
+  
+
