@@ -1,16 +1,27 @@
 #!/usr/bin/env sh
 
-if ! gem list foreman -i --silent; then
-  echo "Installing foreman..."
-  gem install foreman
+# add `--debug` to the command to enable debugging
+if [ "$1" = "--debug" ]; then
+  if ! gem list debug -i --silent; then
+    echo "Installing debug..."
+    gem install debug
+  fi
+
+  echo "Starting debug mode..."
+  exec rdbg -A
+else
+  if ! gem list foreman -i --silent; then
+    echo "Installing foreman..."
+    gem install foreman
+  fi
+  echo "Starting server..."
+  # Default to port 3000 if not specified
+  export PORT="${PORT:-3000}"
+
+  # Let the debug gem allow remote connections,
+  # but avoid loading until `debugger` is called
+  export RUBY_DEBUG_OPEN="true"
+  export RUBY_DEBUG_LAZY="true"
+
+  exec foreman start -f Procfile.dev "$@"
 fi
-
-# Default to port 3000 if not specified
-export PORT="${PORT:-3000}"
-
-# Let the debug gem allow remote connections,
-# but avoid loading until `debugger` is called
-export RUBY_DEBUG_OPEN="true"
-export RUBY_DEBUG_LAZY="true"
-
-exec foreman start -f Procfile.dev "$@"
