@@ -1,6 +1,8 @@
-require_relative "boot"
+# frozen_string_literal: true
 
-require "rails/all"
+require_relative 'boot'
+
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -14,7 +16,7 @@ module YuMonolith
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w(assets tasks))
+    config.autoload_lib(ignore: %w[assets tasks])
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -22,10 +24,10 @@ module YuMonolith
     # in config/environments, which are processed later.
     #
     # Brasilia is the default time zone for this application.
-    config.time_zone = "Brasilia"
+    config.time_zone = 'Brasilia'
     # The default locale is :"pt-BR" and all translations from config/locales/*.rb,yml are auto loaded.
     config.i18n.default_locale = :"pt-BR"
-    config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}")]
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end

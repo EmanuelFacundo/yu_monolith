@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateUsers < ActiveRecord::Migration[7.1]
   def up
     rename_table :users, :sellers
@@ -19,6 +21,6 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.string :document, null: false
     end
 
-    add_index :users, [:userable_type, :userable_id], unique: true
+    add_index :users, %i[userable_type userable_id], unique: true
   end
 end

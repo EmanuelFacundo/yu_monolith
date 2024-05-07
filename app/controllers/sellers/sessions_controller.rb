@@ -21,8 +21,9 @@ module Sellers
     # end
 
     private
+
     def redirect_when_already_signed_in
-      redirect_to request.referrer, alert: t("sellers.already_signed_in") if seller_signed_in?
+      redirect_to request.referrer, alert: t('sellers.already_signed_in') if seller_signed_in?
     end
   end
 end
