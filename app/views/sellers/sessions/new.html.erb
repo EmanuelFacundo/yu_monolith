@@ -1,0 +1,38 @@
+<div class="w-screen h-screen flex flex-col items-center justify-center">
+  <div class="md:max-w-md w-full flex flex-col items-center gap-6 p-4">
+    <div class="text-center">
+      <h2 class="text-2xl font-semibold">Olá, empreendedor!</h2>
+      <p class="text-sm font-medium">Realize seu login para acessar a plataforma.</p>
+    </div>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {
+      class: "w-full bg-white dark:bg-slate-600 shadow rounded-md p-6 flex flex-col items-start gap-4"
+    }) do |f| %>
+      <div class="w-full flex flex-col items-start gap-1">
+        <%= f.label :email, class: "text-base font-medium" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500" %>
+      </div>
+
+      <div class="w-full flex flex-col items-start gap-1">
+        <%= f.label :password, class: "text-base font-medium" %>
+        <%= f.password_field :password, autocomplete: "password", class: "bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500" %>
+        <%= link_to "Esqueceu sua senha?", new_password_path(resource_name), class: "text-sm font-medium text-yellow-500 hover:underline" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="inline-flex items-center gap-1">
+          <%= f.check_box :remember_me, class: "w-5 h-5 text-yellow-600 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" %>
+          <%= f.label :remember_me, "Lembre-se de mim", class: "text-sm font-semibold" %>
+        </div>
+      <% end %>
+
+      <div class="w-full flex flex-col items-center gap-1">
+        <%= f.submit "Entrar", class: "bg-yellow-500 text-white font-semibold rounded-lg p-2.5 w-full mt-4 cursor-pointer" %>
+        <p>ou <%= link_to "crie sua conta aqui", new_seller_registration_path, class: "font-semibold text-yellow-500 hover:underline" %>!</p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
