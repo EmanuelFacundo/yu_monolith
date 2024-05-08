@@ -56,10 +56,14 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug'
 
+  # Use RSpec for testing [https://github.com/rspec/rspec-rails]
   gem 'rspec-core', '~> 3.13'
   gem 'rspec-expectations', '~> 3.13'
   gem 'rspec-mocks', '~> 3.13'
   gem 'rspec-support', '~> 3.13'
+
+  # Use Factories to create models in tests [https://github.com/thoughtbot/factory_bot]
+  gem 'factory_bot_rails'
 end
 
 group :development do
