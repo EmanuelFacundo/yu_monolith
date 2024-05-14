@@ -3,7 +3,7 @@
 module REGEXP
   EMAIL = /\A[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}/
 
-  PASSWORD = /\A(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%\^&*])/
+  PASSWORD = /\A(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/
   module BRAZIL
     CPF = /\A\d{3}\.\d{3}\.\d{3}-\d{2}/
     CNPJ = %r{\A\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}}
@@ -13,7 +13,7 @@ module REGEXP
 
   module HTML
     EMAIL = '^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$'
-    PASSWORD = '^((?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%\^&*])){8,}'
+    PASSWORD = '^((?=.*[a-z])(?=.*[A-Z])(?=.*\d)){8,}'
 
     module BRAZIL
       CPF = '^\d{3}\.\d{3}\.\d{3}-\d{2}$'
