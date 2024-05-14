@@ -3,9 +3,11 @@ pt-BR:
     models:
       seller: "Vendedor"
     attributes:
-      seller:
+      user:
         first_name: "Primeiro Nome"
         last_name: "Último Nome"
+      seller:
+        document: "CPF/CNPJ"
         email: "Email"
         password: "Senha"
         password_confirmation: "Confirmação de Senha"
@@ -17,17 +19,27 @@ pt-BR:
         seller:
           attributes:
             password:
-              confirmation: "não confere com a senha"
+              confirmation: "não confere com a confirmação de senha"
               empty: "não pode ficar em branco"
-              invalid: "é inválida"
+              invalid: "é inválida, precisa ter pelo menos uma letra maiúscula, uma letra minúscula, e um número"
               too_short: "é muito curta (mínimo de %{count} caracteres)"
               too_long: "é muito longa (máximo de %{count} caracteres)"
               blank: "não pode ficar em branco"
+            password_confirmation:
+              blank: "não pode ficar em branco"
+              empty: "não pode ficar em branco"
+              invalid: "não confere com a senha"
+              confirmation: "não confere com a senha"
+              too_short: "é muito curta (mínimo de %{count} caracteres)"
+              too_long: "é muito longa (máximo de %{count} caracteres)"
             email:
               blank: "não pode ficar em branco"
               invalid: "não é válido"
               taken: "já está em uso"
-
+            document:
+              blank: "não pode ficar em branco"
+              invalid: "não é válido"
+              taken: "já está em uso"
   sellers:
     registrations:
       signed_up: "Bem-vindo, %{full_name}! Você se cadastrou com sucesso."
