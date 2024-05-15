@@ -10,6 +10,8 @@ class Seller < ApplicationRecord
   validates :password, presence: true, length: { minimum: 8 }, format: { with: REGEXP::PASSWORD }
   delegate :first_name, :last_name, :phone_number, to: :user, allow_nil: true
 
+  accepts_nested_attributes_for :user
+
   def full_name
     "#{first_name} #{last_name}"
   end
