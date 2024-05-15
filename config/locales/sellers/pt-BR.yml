@@ -3,9 +3,6 @@ pt-BR:
     models:
       seller: "Vendedor"
     attributes:
-      user:
-        first_name: "Primeiro Nome"
-        last_name: "Último Nome"
       seller:
         document: "CPF/CNPJ"
         email: "Email"
