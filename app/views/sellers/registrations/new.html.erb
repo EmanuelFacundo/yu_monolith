@@ -3,49 +3,59 @@
   <div class="flex flex-col items-center gap-6">
     <h2 class="text-2xl font-semibold">Crie sua conta na YuMenu</h2>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {
+    <%= form_for(resource, as: :seller, url: registration_path(:seller), html: {
         class: "bg-white dark:bg-slate-600 shadow rounded-md p-6 flex flex-col items-start gap-4"
-      }) do |f| %>
+      }) do |form| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
+      <%= form.fields_for :user_attributes do |user_form| %>
+        <div class="inline-flex gap-2 w-full">
+          <div class="flex flex-col items-start gap-1">
+            <%= user_form.label "Seu primeiro nome", class: "text-base font-medium", for: "first_name" %>
+            <%= user_form.text_field :first_name, required: true, autofocus: true, autocomplete: "first_name", class: "bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500" %>
+          </div>
+          <div class="flex flex-col item-start gap-1">
+            <%= user_form.label "Seu último nome", class: "text-base font-medium", for: "last_name" %>
+            <%= user_form.text_field :last_name, required: true, autofocus: true, autocomplete: "last_name", class: "bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500" %>
+          </div>
+        </div>
+      <% end %>
+      
+      <div class="flex flex-col gap-1 w-full">
+        <%= form.label "Seu melhor email", class: "text-base font-medium", for: "email" %>
+        <%= form.email_field :email, required: true, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500" , pattern: REGEXP::HTML::EMAIL %>
+      </div>
+
       <div class="inline-flex gap-2 w-full">
-        <div class="flex flex-col items-start gap-1">
-          <%= f.label "Seu primeiro nome", class: "text-base font-medium", for: "first_name" %>
-          <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500" %>
+        <%= form.fields_for :user_attributes do |user_form| %>
+          <div class="flex flex-col gap-1 w-full">
+            <%= user_form.label "Seu melhor telefone", class: "text-base font-medium", for: "phone" %>
+            <%= user_form.phone_field :phone_number, required: true, autofocus: true, autocomplete: "phone", data: { controller: "masks--brazil-phone-number"}, class: "bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500", pattern: REGEXP::HTML::BRAZIL::PHONE_NUMBER %>
+          </div>
+          <% end %>
+        <div class="flex flex-col gap-1 w-full">
+          <%= form.label "Seu documento (CPF ou CNPJ)", class: "text-base font-medium", for: "document" %>
+          <%= form.text_field :document, required: true, autofocus: true, autocomplete: "document", data: { controller: "masks--cpf-or-cnpj" }, class: "bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500", pattern: REGEXP::HTML::BRAZIL::CPF_OR_CNPJ %>
         </div>
-        <div class="flex flex-col item-start gap-1">
-          <%= f.label "Seu último nome", class: "text-base font-medium", for: "last_name" %>
-          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500" %>
-        </div>
       </div>
-
-      <div class="flex flex-col gap-1 w-full">
-        <%= f.label "Seu melhor telefone", class: "text-base font-medium", for: "phone" %>
-        <%= f.phone_field :phone_number, autofocus: true, autocomplete: "phone", class: "bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500" %>
-
-      </div>
-
-      <div class="flex flex-col gap-1 w-full">
-        <%= f.label "Seu melhor email", class: "text-base font-medium", for: "email" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500" %>
-      </div>
+      
 
       <div class="flex flex-col gap-1 w-full">
         <div>
-          <%= f.label :password, class: "text-base font-medium" %>
+          <%= form.label :password, class: "text-base font-medium" %>
           <% if @minimum_password_length %>
           <em>(mínimo de <%= @minimum_password_length %> caracteres)</em>
           <% end %>
         </div>
-        <%= f.password_field :password, autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500" %>
+        <%= form.password_field :password, required: true, autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500" %>
       </div>
 
       <div class="flex flex-col gap-1 w-full">
-        <%= f.label :password_confirmation, class: "text-base font-medium" %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500" %>
+        <%= form.label :password_confirmation, class: "text-base font-medium" %>
+        <%= form.password_field :password_confirmation, required: true, autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500" %>
       </div>
 
-      <%= f.submit "Criar conta", class: "bg-yellow-500 text-white font-semibold rounded-lg p-2.5 w-full mt-4 cursor-pointer" %>
+      <%= form.submit "Criar conta", class: "bg-yellow-500 text-white font-semibold rounded-lg p-2.5 w-full mt-4 cursor-pointer" %>
     <% end %>
   </div>
 </div>

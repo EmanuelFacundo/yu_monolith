@@ -1,0 +1,20 @@
+pt-BR:
+  activerecord:
+    models:
+      user: ""
+    attributes:
+      user:
+        first_name: "Primeiro Nome"
+        last_name: "Último Nome"
+        phone_number: "Número de Telefone"
+    errors:
+      models:
+        user:
+          attributes:
+            first_name:
+              blank: "não pode ficar em branco"
+            last_name:
+              blank: "não pode ficar em branco"
+            phone_number:
+              blank: "não pode ficar em branco"
+              invalid: "não é válido, os formatos válidos são: (00) 0000-0000 ou (00) 00000-0000"

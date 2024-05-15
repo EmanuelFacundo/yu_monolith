@@ -12,11 +12,11 @@ module Sellers
     # POST /sellers
     def create
       super
+
       if resource.persisted?
         Current.seller = resource
-        User.create!(create_user_params)
 
-        flash.now[:notice] = t('sellers.registrations.signed_up', full_name: resource.full_name)
+        flash[:notice] = t('sellers.registrations.signed_up', full_name: resource.full_name)
       else
         flash.now[:alert] = t('sellers.registrations.signed_up_failed')
       end
@@ -39,8 +39,8 @@ module Sellers
 
     private
 
-    def create_user_params
-      params.require(:seller).permit(:first_name, :last_name, :phone_number).merge(userable: Current.seller)
+    def sign_up_params
+      params.require(:seller).permit(:email, :password, :password_confirmation, :document, user_attributes: %i[first_name last_name phone_number])
     end
 
     def redirect_when_already_signed_in
