@@ -4,7 +4,7 @@ default: &default
   username: yu_monolith
   password: pass_yu_monolith
   host: localhost
-  port: 5433
+  port: 5432
 
 development:
   <<: *default
