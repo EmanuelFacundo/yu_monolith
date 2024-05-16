@@ -4,6 +4,7 @@ pt-BR:
       seller: "Vendedor"
     attributes:
       seller:
+        required: "não pode ficar em branco"
         document: "CPF/CNPJ"
         email: "Email"
         password: "Senha"
