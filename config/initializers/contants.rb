@@ -23,3 +23,7 @@ module REGEXP
     end
   end
 end
+
+module STORE
+  STATUS = %w[active inactive].freeze
+end
