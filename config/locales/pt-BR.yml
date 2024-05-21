@@ -1,2 +1,10 @@
 pt-BR:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Falha ao salvar o registro: %{errors}"
+        required: "não pode ficar em branco"
+  errors:
+    messages:
+      required: "não pode ficar em branco"
   

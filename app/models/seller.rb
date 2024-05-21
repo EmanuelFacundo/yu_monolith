@@ -3,6 +3,8 @@
 class Seller < ApplicationRecord
   include Userable
 
+  has_one :store, dependent: :destroy, inverse_of: :seller, foreign_key: :user_id
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :email, presence: true, uniqueness: true, format: { with: REGEXP::EMAIL }

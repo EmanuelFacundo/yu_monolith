@@ -1,0 +1,34 @@
+pt-BR:
+  activerecord:
+    models:
+      store: "Loja"
+    attributes:
+      store:
+        name: "Nome"
+        status: "Status"
+        favicon_data: "Favicon"
+        logo_data: "Logo"
+        banner_data: "Banner"
+        instagram_url: "Instagram"
+        facebook_url: "Facebook"
+        tiktok_url: "TikTok"
+        email: "E-mail"
+        phone_number: "Número de Telefone"
+        seo_title: "Título SEO"
+        meta_description: "Descrição Meta"
+        meta_keywords: "Palavras-chave Meta"
+    errors:
+      models:
+        store:
+          attributes:
+            status:
+              blank: "não pode ficar em branco"
+              inclusion: "não está incluído na lista"
+            email:
+              blank: "não pode ficar em branco"
+              invalid: "não é válido"
+            phone_number:
+              blank: "não pode ficar em branco"
+              invalid: "não é válido"
+            
+
