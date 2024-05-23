@@ -7,4 +7,14 @@ Rails.application.routes.draw do
   }
 
   root to: 'home#index'
+
+  namespace :sellers do
+    namespace :dashboard do
+      root to: 'home#index'
+    end
+  end
+
+  namespace :stores do
+    resources :registrations, only: %i[new create]
+  end
 end
