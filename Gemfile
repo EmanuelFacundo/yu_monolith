@@ -34,6 +34,9 @@ gem 'jbuilder'
 # Use Devise for user authentication [https://github.com/heartcombo/devise]
 gem 'devise', '~> 4.9'
 
+# Use Shire for file uploads, storage, and processing [https://github.com/shrinerb/shrine]
+gem 'shrine', '~> 3.6'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
