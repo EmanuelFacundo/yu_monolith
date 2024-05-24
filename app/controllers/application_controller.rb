@@ -1,6 +1,11 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
+  include Authenticateable
+
   private
-  def authenticate_user!
-    redirect_to new_seller_session_path unless seller_signed_in?    
+
+  def set_seller
+    Current.seller = current_seller
   end
 end

@@ -2,6 +2,8 @@
 
 module Sellers
   class SessionsController < Devise::SessionsController
+    include Authenticateable
+
     before_action :redirect_when_already_signed_in, only: %i[new create]
 
     # GET /sellers/sign_in
