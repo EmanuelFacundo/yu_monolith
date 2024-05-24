@@ -68,6 +68,9 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  # Disable transactional fixtures for test attachments using Shrine
+  config.use_transactional_fixtures = false
+
   # Documentation mode
   config.formatter = :documentation
 end
