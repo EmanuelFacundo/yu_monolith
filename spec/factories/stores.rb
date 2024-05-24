@@ -6,6 +6,8 @@ FactoryBot.define do
     email { 'teste@store.com' }
     phone_number { '(11) 94002-8922' }
 
+    association :seller
+
     trait :inactive do
       status { 'inactive' }
     end
