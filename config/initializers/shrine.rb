@@ -2,6 +2,7 @@
 
 require 'shrine'
 require 'shrine/storage/file_system'
+require 'image_processing/vips'
 
 if Rails.env.development?
   Shrine.storages = {
@@ -20,3 +21,4 @@ end
 Shrine.plugin :activerecord
 Shrine.plugin :cached_attachment_data # For forms. For retaining the cached file acroos form redisplays
 Shrine.plugin :restore_cached_data # re-extract metadata when attaching a cached file
+Shrine.plugin :remove_invalid # remove and delete files that are invalid
