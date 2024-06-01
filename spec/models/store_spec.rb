@@ -65,7 +65,7 @@ RSpec.describe Store, type: :model do # rubocop:disable Metrics/BlockLength
     context 'when uploading files' do
       context 'when logo' do
         it 'has a logo url' do
-          logo = File.open(Rails.root.join('spec', 'fixtures', 'files', 'square500x500.png'))
+          logo = File.open(Rails.root.join('spec', 'fixtures', 'files', 'square500.png'))
           store = create(:store, logo:)
 
           expect(store.logo_url).to be_present
@@ -74,7 +74,7 @@ RSpec.describe Store, type: :model do # rubocop:disable Metrics/BlockLength
 
       context 'when banner' do
         it 'has a banner url' do
-          banner = File.open(Rails.root.join('spec', 'fixtures', 'files', 'square500x500.png'))
+          banner = File.open(Rails.root.join('spec', 'fixtures', 'files', 'square500.png'))
           store = create(:store, banner:)
 
           expect(store.banner_url).to be_present
@@ -83,7 +83,7 @@ RSpec.describe Store, type: :model do # rubocop:disable Metrics/BlockLength
 
       context 'when favicon' do
         it 'has a favicon url' do
-          favicon = File.open(Rails.root.join('spec', 'fixtures', 'files', 'square500x500.png'))
+          favicon = File.open(Rails.root.join('spec', 'fixtures', 'files', 'square192.png'))
           store = create(:store, favicon:)
 
           expect(store.favicon_url).to be_present
@@ -113,21 +113,21 @@ RSpec.describe Store, type: :model do # rubocop:disable Metrics/BlockLength
 
     context 'when deleting files' do
       it 'not has a logo url' do
-        store = create(:store, logo: File.open(Rails.root.join('spec', 'fixtures', 'files', 'square500x500.png')))
+        store = create(:store, logo: File.open(Rails.root.join('spec', 'fixtures', 'files', 'square500.png')))
         store.logo = nil
 
         expect(store.logo_url).to be_nil
       end
 
       it 'not has a banner url' do
-        store = create(:store, banner: File.open(Rails.root.join('spec', 'fixtures', 'files', 'square500x500.png')))
+        store = create(:store, banner: File.open(Rails.root.join('spec', 'fixtures', 'files', 'square500.png')))
         store.banner = nil
 
         expect(store.banner_url).to be_nil
       end
 
       it 'not has a favicon url' do
-        store = create(:store, favicon: File.open(Rails.root.join('spec', 'fixtures', 'files', 'square500x500.png')))
+        store = create(:store, favicon: File.open(Rails.root.join('spec', 'fixtures', 'files', 'square192.png')))
         store.favicon = nil
 
         expect(store.favicon_url).to be_nil
