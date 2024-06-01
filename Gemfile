@@ -37,6 +37,9 @@ gem 'devise', '~> 4.9'
 # Use Shire for file uploads, storage, and processing [https://github.com/shrinerb/shrine]
 gem 'shrine', '~> 3.6'
 
+# FastImage finds the size or type of an image given its uri by fetching as little as needed [https://github.com/sdsykes/fastimage]
+gem 'fastimage', '~> 1.8', '>= 1.8.1'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
