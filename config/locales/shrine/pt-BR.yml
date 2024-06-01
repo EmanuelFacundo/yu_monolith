@@ -1,0 +1,21 @@
+pt-BR:
+  errors:
+    file:
+      max_size: "é muito grande (máximo é %{max})"
+      min_size: "é muito pequeno (mínimo é %{min})"
+      max_width: "a largura é muito grande (máximo é %{max})"
+      min_width: "a largura é muito pequena (mínimo é %{min})"
+      max_height: "a altura é muito grande (máximo é %{max})"
+      min_height: "a altura é muito pequena (mínimo é %{min})"
+      max_dimensions: "as dimensões são muito grandes (máximo é %{dims})"
+      min_dimensions: "as dimensões são muito pequenas (mínimo é %{dims})"
+      mime_type_inclusion: "Este tipo de arquivo não é permitido (%{list} são permitidos)"
+      mime_type_exclusion: "não é permitido (%{list} são proibidos)"
+      extension_inclusion: "Este tipo de extensão não é permitida (%{list} são permitidos)"
+      extension_exclusion: "não é permitido (%{list} são proibidos)"
+
+        
+
+
+            
+
